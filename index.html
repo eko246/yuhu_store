@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yuhu Store</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #007BFF; /* Biru */
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        h1 {
+            font-size: 2.5em;
+            font-weight: 600;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            background-color: #28a745; /* Hijau */
+            color: white;
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        nav ul li a:hover {
+            background-color: #218838; /* Hijau lebih gelap */
+            transform: scale(1.05);
+        }
+
+        .hero {
+            background: url('background.jpg') no-repeat center center/cover;
+            color: white;
+            padding: 100px 20px;
+            text-align: center;
+        }
+
+        .hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+        }
+
+        button {
+            background-color: #28a745; /* Hijau */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin: 10px 5px;
+            cursor: pointer;
+            border-radius: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s, transform 0.3s;
+        }
+
+        button:hover {
+            background-color: #218838; /* Hijau lebih gelap */
+            transform: scale(1.05);
+        }
+
+        section {
+            padding: 20px;
+            margin: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .product-container {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+        }
+
+        .product {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 10px;
+            text-align: center;
+            width: 300px;
+            transition: transform 0.3s;
+        }
+
+        .product:hover {
+            transform: scale(1.05);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .product img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #007BFF; /* Biru */
+            color: white;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+
+        footer p {
+            margin: 0;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Yuhu Store</h1>
+		<br/>
+               <nav>
+            <ul>
+                <li><a href="#home">Beranda</a></li>
+                <li><a href="#products" onclick="showProducts()">Produk</a></li>
+                <li><a href="#contact" onclick="showContact()">Kontak</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="home" class="hero">
+        <h2>Temukan Gelang Terindah untuk Anda!</h2>
+        <p>Gelang yang cocok untuk setiap kesempatan.</p>
+        <button onclick="showProducts()">Lihat Produk</button>
+    </section>
+
+    <section id="products" class="hidden">
+        <h2>Produk Kami</h2>
+        <div class="product-container">
+            <div class="product">
+                <img src="gelang1.jpg" alt="Gelang Rantai">
+                <h3>Gelang Rantai</h3>
+                <p>Harga: Rp 50.000</p>
+                <button onclick="order('Gelang Rantai')">Pesan via WA</button>
+                <button onclick="order('Gelang Rantai', 'ig')">Pesan via IG</button>
+            </div>
+            <div class="product">
+                <img src="gelang2.jpg" alt="Gelang Tali Prusik">
+                <h3>Gelang Tali Prusik</h3>
+                <p>Harga: Rp 45.000</p>
+                <button onclick="order('Gelang Tali Prusik')">Pesan via WA</button>
+                <button onclick="order('Gelang Tali Prusik', 'ig')">Pesan via IG</button>
+            </div>
+            <div class="product">
+                <img src="gelang3.jpg" alt="Gelang Kayu Kokka">
+                <h3>Gelang Kayu Kokka</h3>
+                <p>Harga: Rp 40.000</p>
+                <button onclick="order('Gelang Kayu Kokka')">Pesan via WA</button>
+                <button onclick="order('Gelang Kayu Kokka', 'ig')">Pesan via IG</button>
+            </div>
+            <div class="product">
+                <img src="gelang4.jpg" alt="Gelang Vernyx Braid">
+                <h3>Gelang Vernyx Braid</h3>
+                <p>Harga: Rp 80.000</p>
+                <button onclick="order('Gelang Vernyx Braid')">Pesan via WA</button>
+                <button onclick="order('Gelang Vernyx Braid', 'ig')">Pesan via IG</button>
+            </div>
+			  <div class="product">
+                <img src="gelang5.jpg" alt="Gelang Rantai Motif Bunga">
+                <h3>Gelang Rantai Motif Bunga</h3>
+                <p>Harga: Rp 75.000</p>
+                <button onclick="order('Gelang Rantai Motif Bunga')">Pesan via WA</button>
+                <button onclick="order('Gelang Rantai Motif Bunga', 'ig')">Pesan via IG</button>
+            </div>
+			<div class="product">
+                <img src="gelang6.jpg" alt="Gelang Couple">
+                <h3>Gelang Couple</h3>
+                <p>Harga: Rp 70.000</p>
+                <button onclick="order('Gelang Couple')">Pesan via WA</button>
+                <button onclick="order('Gelang Couple', 'ig')">Pesan via IG</button>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="hidden">
+        <h2>Kontak Kami</h2>
+        <p>Jika Anda memiliki pertanyaan, silakan hubungi kami melalui:</p>
+        <p>WhatsApp: <a href="https://wa.me/6287856650225">+62 878-5665-0225</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/yuhu_store_">@yuhu_store_</a></p>
+    </section>
+
+    <footer>
+        <h3>Kontak Kami</h3>
+        <p>WhatsApp: <a href="https://wa.me/6287856650225" style="color: white;">+62 878-5665-0225</a></p>
+        <p>Instagram: <a href="https://www.instagram.com/yuhu_store_" style="color: white;">@yuhu_store_</a></p>
+        <p>&copy; 2024 Yuhu Store. Semua hak dilindungi.</p>
+    </footer>
+
+    <script>
+        function showProducts() {
+            const productsSection = document.getElementById('products');
+            const contactSection = document.getElementById('contact');
+            productsSection.classList.toggle('hidden');
+            contactSection.classList.add('hidden'); // Sembunyikan bagian kontak
+        }
+
+        function showContact() {
+            const contactSection = document.getElementById('contact');
+            const productsSection = document.getElementById('products');
+            contactSection.classList.toggle('hidden');
+            productsSection.classList.add('hidden'); // Sembunyikan bagian produk
+        }
+
+        function order(productName, platform = 'wa') {
+            let message = `Halo, saya ingin memesan ${productName}.`;
+            if (platform === 'ig') {
+                // Ganti dengan username Instagram bisnis Anda
+               
+                const instagramUsername = 'yuhu_store_';
+                window.open(`https://www.instagram.com/yuhu_store_{instagramUsername}/`);
+            } else {
+                // Ganti dengan nomor WhatsApp bisnis Anda
+                const phoneNumber = '6287856650225'; // Ganti dengan nomor WhatsApp Anda
+                window.open(`https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`);
+            }
+        }
+    </script>
+</body>
+</html>
